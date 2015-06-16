@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0F136621B3000C2004CB24B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F136611B3000C2004CB24B /* AppDelegate.m */; };
+		A0F136641B3000C2004CB24B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F136631B3000C2004CB24B /* main.m */; };
+		A0F136671B3000C2004CB24B /* DockMarker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0F136651B3000C2004CB24B /* DockMarker.xcdatamodeld */; };
+		A0F136691B3000C2004CB24B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F136681B3000C2004CB24B /* Images.xcassets */; };
+		A0F1366C1B3000C2004CB24B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0F1366A1B3000C2004CB24B /* MainMenu.xib */; };
+		A0F136781B3000C2004CB24B /* DockMarkerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F136771B3000C2004CB24B /* DockMarkerTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0F136721B3000C2004CB24B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0F136531B3000C2004CB24B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0F1365A1B3000C2004CB24B;
+			remoteInfo = DockMarker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A0F1365B1B3000C2004CB24B /* DockMarker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DockMarker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F1365F1B3000C2004CB24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0F136601B3000C2004CB24B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A0F136611B3000C2004CB24B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A0F136631B3000C2004CB24B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A0F136661B3000C2004CB24B /* DockMarker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DockMarker.xcdatamodel; sourceTree = "<group>"; };
+		A0F136681B3000C2004CB24B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A0F1366B1B3000C2004CB24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A0F136711B3000C2004CB24B /* DockMarkerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DockMarkerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F136761B3000C2004CB24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0F136771B3000C2004CB24B /* DockMarkerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DockMarkerTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0F136581B3000C2004CB24B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F1366E1B3000C2004CB24B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0F136521B3000C2004CB24B = {
+			isa = PBXGroup;
+			children = (
+				A0F1365D1B3000C2004CB24B /* DockMarker */,
+				A0F136741B3000C2004CB24B /* DockMarkerTests */,
+				A0F1365C1B3000C2004CB24B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A0F1365C1B3000C2004CB24B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0F1365B1B3000C2004CB24B /* DockMarker.app */,
+				A0F136711B3000C2004CB24B /* DockMarkerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0F1365D1B3000C2004CB24B /* DockMarker */ = {
+			isa = PBXGroup;
+			children = (
+				A0F136601B3000C2004CB24B /* AppDelegate.h */,
+				A0F136611B3000C2004CB24B /* AppDelegate.m */,
+				A0F136681B3000C2004CB24B /* Images.xcassets */,
+				A0F1366A1B3000C2004CB24B /* MainMenu.xib */,
+				A0F136651B3000C2004CB24B /* DockMarker.xcdatamodeld */,
+				A0F1365E1B3000C2004CB24B /* Supporting Files */,
+			);
+			path = DockMarker;
+			sourceTree = "<group>";
+		};
+		A0F1365E1B3000C2004CB24B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A0F1365F1B3000C2004CB24B /* Info.plist */,
+				A0F136631B3000C2004CB24B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0F136741B3000C2004CB24B /* DockMarkerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A0F136771B3000C2004CB24B /* DockMarkerTests.m */,
+				A0F136751B3000C2004CB24B /* Supporting Files */,
+			);
+			path = DockMarkerTests;
+			sourceTree = "<group>";
+		};
+		A0F136751B3000C2004CB24B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A0F136761B3000C2004CB24B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0F1365A1B3000C2004CB24B /* DockMarker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0F1367B1B3000C2004CB24B /* Build configuration list for PBXNativeTarget "DockMarker" */;
+			buildPhases = (
+				A0F136571B3000C2004CB24B /* Sources */,
+				A0F136581B3000C2004CB24B /* Frameworks */,
+				A0F136591B3000C2004CB24B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DockMarker;
+			productName = DockMarker;
+			productReference = A0F1365B1B3000C2004CB24B /* DockMarker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A0F136701B3000C2004CB24B /* DockMarkerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0F1367E1B3000C2004CB24B /* Build configuration list for PBXNativeTarget "DockMarkerTests" */;
+			buildPhases = (
+				A0F1366D1B3000C2004CB24B /* Sources */,
+				A0F1366E1B3000C2004CB24B /* Frameworks */,
+				A0F1366F1B3000C2004CB24B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0F136731B3000C2004CB24B /* PBXTargetDependency */,
+			);
+			name = DockMarkerTests;
+			productName = DockMarkerTests;
+			productReference = A0F136711B3000C2004CB24B /* DockMarkerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0F136531B3000C2004CB24B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Serge Sander";
+				TargetAttributes = {
+					A0F1365A1B3000C2004CB24B = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					A0F136701B3000C2004CB24B = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = A0F1365A1B3000C2004CB24B;
+					};
+				};
+			};
+			buildConfigurationList = A0F136561B3000C2004CB24B /* Build configuration list for PBXProject "DockMarker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A0F136521B3000C2004CB24B;
+			productRefGroup = A0F1365C1B3000C2004CB24B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0F1365A1B3000C2004CB24B /* DockMarker */,
+				A0F136701B3000C2004CB24B /* DockMarkerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0F136591B3000C2004CB24B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F136691B3000C2004CB24B /* Images.xcassets in Resources */,
+				A0F1366C1B3000C2004CB24B /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F1366F1B3000C2004CB24B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0F136571B3000C2004CB24B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F136641B3000C2004CB24B /* main.m in Sources */,
+				A0F136671B3000C2004CB24B /* DockMarker.xcdatamodeld in Sources */,
+				A0F136621B3000C2004CB24B /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0F1366D1B3000C2004CB24B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0F136781B3000C2004CB24B /* DockMarkerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0F136731B3000C2004CB24B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0F1365A1B3000C2004CB24B /* DockMarker */;
+			targetProxy = A0F136721B3000C2004CB24B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A0F1366A1B3000C2004CB24B /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0F1366B1B3000C2004CB24B /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A0F136791B3000C2004CB24B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A0F1367A1B3000C2004CB24B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A0F1367C1B3000C2004CB24B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DockMarker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A0F1367D1B3000C2004CB24B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DockMarker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A0F1367F1B3000C2004CB24B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DockMarkerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DockMarker.app/Contents/MacOS/DockMarker";
+			};
+			name = Debug;
+		};
+		A0F136801B3000C2004CB24B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DockMarkerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DockMarker.app/Contents/MacOS/DockMarker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A0F136561B3000C2004CB24B /* Build configuration list for PBXProject "DockMarker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0F136791B3000C2004CB24B /* Debug */,
+				A0F1367A1B3000C2004CB24B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0F1367B1B3000C2004CB24B /* Build configuration list for PBXNativeTarget "DockMarker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0F1367C1B3000C2004CB24B /* Debug */,
+				A0F1367D1B3000C2004CB24B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A0F1367E1B3000C2004CB24B /* Build configuration list for PBXNativeTarget "DockMarkerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0F1367F1B3000C2004CB24B /* Debug */,
+				A0F136801B3000C2004CB24B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A0F136651B3000C2004CB24B /* DockMarker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A0F136661B3000C2004CB24B /* DockMarker.xcdatamodel */,
+			);
+			currentVersion = A0F136661B3000C2004CB24B /* DockMarker.xcdatamodel */;
+			path = DockMarker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A0F136531B3000C2004CB24B /* Project object */;
+}
