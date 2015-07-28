@@ -7,6 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+NSWindow *openPicker;
+BOOL ignoreThisWindow;
 
 int main(int argc, const char * argv[]) {
     return NSApplicationMain(argc, argv);
