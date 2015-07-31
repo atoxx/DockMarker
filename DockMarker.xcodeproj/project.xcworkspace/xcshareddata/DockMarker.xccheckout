@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8B2CA241-D150-4040-8CAB-E42FB530E17C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>DockMarker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>ADF662A33291E2C4237A1A2E4B2309B3D4C5572E</key>
+		<string>https://github.com/atoxx/DockMarker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>DockMarker.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>ADF662A33291E2C4237A1A2E4B2309B3D4C5572E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/atoxx/DockMarker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>ADF662A33291E2C4237A1A2E4B2309B3D4C5572E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ADF662A33291E2C4237A1A2E4B2309B3D4C5572E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>DockMarker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

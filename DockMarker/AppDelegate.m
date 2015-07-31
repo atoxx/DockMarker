@@ -147,6 +147,9 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
     
     if (CGRectContainsPoint(area, point )) {
         if (!self.timer){
+            if (self.needsRestart == NO){
+                self.needsRestart = YES;
+            }
             self.timer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(looper) userInfo:nil repeats:YES];
         }
     } else {
@@ -156,6 +159,9 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
                 [self.timer invalidate];
                 self.timer = nil;
             });
+            if (self.needsRestart == YES){
+                //[self relaunchAfterDelay:1];
+            }
         }
     }
     return aEvent;
@@ -262,13 +268,11 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
     AXUIElementRef appElement = NULL;
     AXUIElementRef axElement;
     NSRect rect;
-    CFTypeRef value;
     
     appElement = AXUIElementCreateApplication([[[NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.apple.dock"] lastObject] processIdentifier]);
     
     if (appElement != NULL)
     {
-        
         AXUIElementRef firstChild = (__bridge AXUIElementRef)[[self subelementsFromElement:appElement forAttribute:@"AXChildren"] objectAtIndex:0];
         NSArray *children = [self subelementsFromElement:firstChild forAttribute:@"AXChildren"];
         NSEnumerator *e = [children objectEnumerator];
@@ -285,25 +289,23 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
                 else
                     titleValue = (__bridge id)value; // assume toll-free bridging
                 if ([titleValue isEqual:appName]) {
-                    CFRelease(firstChild);
-                    
+                    if (value){
+                        CFRelease(value);
+                    }
+                    if (firstChild){
+                        CFRelease(firstChild);
+                    }
                     break;
                 }
             }
         }
-        // get size
-        AXUIElementCopyAttributeValue(axElement, kAXSizeAttribute, (CFTypeRef *) &value);
-        AXValueGetValue(value, kAXValueCGSizeType, (void *) &rect.size);
-        CFRelease(value);
-        
-        // get position
-        AXUIElementCopyAttributeValue(axElement, kAXPositionAttribute, (CFTypeRef*) &value);
-        AXValueGetValue(value, kAXValueCGPointType, (void *) &rect.origin);
-        CFRelease(value);
-        
-        CFRelease(axElement);
-        CFRelease(appElement);
-        
+        rect = [UIElementUtilities frameOfUIElement:axElement];
+        if (axElement){
+            CFRelease(axElement);
+        }
+        if (appElement){
+            CFRelease(appElement);
+        }
     }
     return rect;
 }
@@ -342,19 +344,28 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
         AXUIElementCopyAttributeValue(focusedWindow, kAXPositionAttribute, (CFTypeRef*) &value);
         AXValueGetValue(value, kAXValueCGPointType, (void *) &rect.origin);
         
-        CFRelease(application);
-        
+        if (application){
+            CFRelease(application);
+        }
         if (NSEqualRects(rect, [[NSScreen mainScreen] frame]) == YES){
-            CFRelease(focusedWindow);
-            CFRelease(value);
+            if (focusedWindow){
+                CFRelease(focusedWindow);
+            }
+            if (value){
+                CFRelease(value);
+            }
             if (isFinder == YES){
                 return NO;
             } else {
                 return YES;
             }
         } else {
-            CFRelease(focusedWindow);
-            CFRelease(value);
+            if (focusedWindow){
+                CFRelease(focusedWindow);
+            }
+            if (value){
+                CFRelease(value);
+            }
             return NO;
         }
     }
@@ -533,8 +544,9 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
             [cleaned addObject:nr];
         }
     }
-    CFRelease(listOfWindows);
-    
+    if (listOfWindows){
+        CFRelease(listOfWindows);
+    }
     return (int)[cleaned count];
 }
 - (void) registerForAXEvents{
@@ -564,9 +576,12 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
                 [self observe:kAXWindowDeminiaturizedNotification element:element observer:observer application:[applications objectAtIndex:i]];
                 [observers setObject:(__bridge id)observer forKey:pidNumber];
                 
-                CFRelease(observer);
-                CFRelease(element);
-                
+                if (observer){
+                    CFRelease(observer);
+                }
+                if (element){
+                    CFRelease(element);
+                }
         }
     }
     //AXObserverAddNotification( observer, frontWindow, kAXFocusedWindowChangedNotification, (__bridge void *)(self) );
@@ -596,6 +611,17 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
                      
                       nil];
     return excl;
+}
+- (void)relaunchAfterDelay:(float)seconds{
+    NSTask *task = [[NSTask alloc] init];
+    NSMutableArray *args = [NSMutableArray array];
+    [args addObject:@"-c"];
+    [args addObject:[NSString stringWithFormat:@"sleep %f; open \"%@\"", seconds, [[NSBundle mainBundle] bundlePath]]];
+    [task setLaunchPath:@"/bin/sh"];
+    [task setArguments:args];
+    [task launch];
+    
+    [[NSApplication sharedApplication] terminate:nil];
 }
 
 

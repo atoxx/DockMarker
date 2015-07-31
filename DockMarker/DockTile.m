@@ -51,7 +51,6 @@ extern NSWindow *openPicker;
         
         deleg = (AppDelegate*) [[NSApplication sharedApplication] delegate];
         [self addSubview:indicator];
-        //[NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(looper) userInfo:nil repeats:YES];
     }
     return self;
 }
@@ -59,9 +58,6 @@ extern NSWindow *openPicker;
 - (void) viewDidMoveToWindow{
     track = [[NSTrackingArea alloc] initWithRect:[self bounds] options: (NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways) owner:self userInfo:nil];
     [self addTrackingArea:track];
-}
--(void) looper{
-    [self appDockIconByName:[self.values valueForKey:@"name"]];
 }
 - (void) updateTA:(NSSize)size{
     NSRect rect;
@@ -358,75 +354,4 @@ extern NSWindow *openPicker;
     return nil;
 }
 
-- (NSArray *)subelementsFromElement:(AXUIElementRef)element forAttribute:(NSString *)attribute{
-    CFArrayRef *subElements = nil;
-    CFIndex count = 0;
-    AXError result;
-    
-    result = AXUIElementGetAttributeValueCount(element, (__bridge CFStringRef)attribute, &count);
-    if (result != kAXErrorSuccess) return nil;
-    result = AXUIElementCopyAttributeValues(element, (__bridge CFStringRef)attribute, 0, count, (CFArrayRef *)&subElements);
-    if (result != kAXErrorSuccess) return nil;
-    
-    CFArrayRef someArrayRef = subElements;
-    NSArray *array = (__bridge NSArray*)someArrayRef;
-    return array;
-}
-- (void)appDockIconByName:(NSString *)appName{
-    AXUIElementRef appElement = NULL;
-    AXUIElementRef axElement;
-    NSRect rect;
-    CFTypeRef value;
-    
-    appElement = AXUIElementCreateApplication([[[NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.apple.dock"] lastObject] processIdentifier]);
-    
-    if (appElement != NULL)
-    {
-        
-        AXUIElementRef firstChild = (__bridge AXUIElementRef)[[self subelementsFromElement:appElement forAttribute:@"AXChildren"] objectAtIndex:0];
-        NSArray *children = [self subelementsFromElement:firstChild forAttribute:@"AXChildren"];
-        NSEnumerator *e = [children objectEnumerator];
-        
-        while (axElement = (__bridge AXUIElementRef)[e nextObject])
-        {
-            CFTypeRef value;
-            id titleValue;
-            AXError result = AXUIElementCopyAttributeValue(axElement, kAXTitleAttribute, &value);
-            if (result == kAXErrorSuccess)
-            {
-                if (AXValueGetType(value) != kAXValueIllegalType)
-                    titleValue = [NSValue valueWithPointer:value];
-                else
-                    titleValue = (__bridge id)value; // assume toll-free bridging
-                if ([titleValue isEqual:appName]) {
-                    CFRelease(firstChild);
-                    
-                    break;
-                }
-            }
-        }
-        // get size
-        AXUIElementCopyAttributeValue(axElement, kAXSizeAttribute, (CFTypeRef *) &value);
-        AXValueGetValue(value, kAXValueCGSizeType, (void *) &rect.size);
-        CFRelease(value);
-        
-        // get position
-        AXUIElementCopyAttributeValue(axElement, kAXPositionAttribute, (CFTypeRef*) &value);
-        AXValueGetValue(value, kAXValueCGPointType, (void *) &rect.origin);
-        CFRelease(value);
-        
-        CFRelease(axElement);
-        CFRelease(appElement);
-        
-    }
-    
-    NSRect TAR = rect;
-    TAR.size.height += 0;
-    rect.origin.y = 15;
-
-    [[self animator] setFrame:rect];
-    [self updateTA:TAR.size];
-    [self.indicator setFrame:NSMakeRect((rect.size.width - 30) / 2, 0, 30, 15)];
-    
-}
 @end

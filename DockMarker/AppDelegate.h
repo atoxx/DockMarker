@@ -40,6 +40,7 @@
 @property NSMutableArray *RunningTiles;
 @property int TotalWindowsCount;
 @property NSMutableDictionary *WindowPreviews;
+@property BOOL needsRestart;
 
 @property (nonatomic) NSMutableArray *windowInfoArray;
 @property (nonatomic) NSMutableArray *lastAllWindowInfoArray;
