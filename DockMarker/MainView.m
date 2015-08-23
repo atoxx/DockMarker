@@ -22,6 +22,7 @@ extern BOOL ignoreThisWindow;
     
     // Drawing code here.
 }
+
 - (NSView*)hitTest:(NSPoint)point
 {
     NSView *hitView = [super hitTest:point];

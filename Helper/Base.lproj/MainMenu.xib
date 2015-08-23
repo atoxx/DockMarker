@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
@@ -11,24 +11,15 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
-            <connections>
-                <outlet property="SettingsWindow" destination="QIU-U1-1c2" id="YiF-Uc-G8V"/>
-                <outlet property="colorPicker" destination="B6U-t9-14f" id="Brp-Vp-WCh"/>
-                <outlet property="lALogin" destination="of7-sg-S6x" id="Duq-Vm-Znq"/>
-                <outlet property="sizePicker" destination="Y7n-px-vCY" id="ZV9-ji-qx6"/>
-                <outlet property="statusMenu" destination="80G-a3-aql" id="jkd-mB-G8l"/>
-                <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
-            </connections>
-        </customObject>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
-                <menuItem title="DockMarker" id="1Xt-HY-uBw">
+                <menuItem title="Helper" id="1Xt-HY-uBw">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="DockMarker" systemMenu="apple" id="uQy-DD-JDr">
+                    <menu key="submenu" title="Helper" systemMenu="apple" id="uQy-DD-JDr">
                         <items>
-                            <menuItem title="About DockMarker" id="5kV-Vb-QxS">
+                            <menuItem title="About Helper" id="5kV-Vb-QxS">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-1" id="Exp-CZ-Vem"/>
@@ -42,7 +33,7 @@
                                 <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                            <menuItem title="Hide DockMarker" keyEquivalent="h" id="Olw-nP-bQN">
+                            <menuItem title="Hide Helper" keyEquivalent="h" id="Olw-nP-bQN">
                                 <connections>
                                     <action selector="hide:" target="-1" id="PnN-Uc-m68"/>
                                 </connections>
@@ -60,7 +51,7 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                            <menuItem title="Quit DockMarker" keyEquivalent="q" id="4sb-4s-VLi">
+                            <menuItem title="Quit Helper" keyEquivalent="q" id="4sb-4s-VLi">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="Te7-pn-YzF"/>
                                 </connections>
@@ -661,7 +652,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                         <items>
-                            <menuItem title="DockMarker Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                            <menuItem title="Helper Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
                                 </connections>
@@ -670,100 +661,6 @@
                     </menu>
                 </menuItem>
             </items>
-        </menu>
-        <window title="DockMarker" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hasShadow="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="QvC-M9-y7g">
-            <windowCollectionBehavior key="collectionBehavior" canJoinAllSpaces="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </view>
-        </window>
-        <customView id="FDU-Sv-l1Z">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bYA-Yi-5B6">
-                    <rect key="frame" x="0.0" y="-5" width="50" height="50"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" truncatesLastVisibleLine="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="5" usesSingleLineMode="YES" id="d7G-sG-ylK">
-                        <font key="font" metaFont="systemBold" size="30"/>
-                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-            </subviews>
-            <point key="canvasLocation" x="435" y="759"/>
-        </customView>
-        <window title="Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="QIU-U1-1c2" userLabel="Settings">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="283" y="305" width="274" height="363"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
-            <view key="contentView" id="lTR-ss-THr">
-                <rect key="frame" x="0.0" y="0.0" width="274" height="363"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="of7-sg-S6x">
-                        <rect key="frame" x="18" y="327" width="117" height="18"/>
-                        <buttonCell key="cell" type="check" title="Launcj at Login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="D0I-UM-Gs2">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="toggleLoginItem:" target="Voe-Tx-rLC" id="8pw-QB-j4u"/>
-                        </connections>
-                    </button>
-                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B6U-t9-14f">
-                        <rect key="frame" x="20" y="265" width="44" height="23"/>
-                        <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <connections>
-                            <action selector="chooseColor:" target="Voe-Tx-rLC" id="s37-HN-67z"/>
-                        </connections>
-                    </colorWell>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z0F-oi-Fbh">
-                        <rect key="frame" x="20" y="296" width="175" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Choose the Indicator Color:" id="seJ-hA-SVq">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wio-20-jhd">
-                        <rect key="frame" x="20" y="240" width="144" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Choose Indicator Size:" id="AHe-HV-DbN">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7n-px-vCY">
-                        <rect key="frame" x="18" y="213" width="238" height="21"/>
-                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="15" doubleValue="15" tickMarkPosition="above" sliderType="linear" id="CRE-Lp-ccf"/>
-                        <connections>
-                            <action selector="chooseSize:" target="Voe-Tx-rLC" id="1jG-F8-cRL"/>
-                        </connections>
-                    </slider>
-                </subviews>
-            </view>
-            <point key="canvasLocation" x="180" y="373.5"/>
-        </window>
-        <menu id="80G-a3-aql">
-            <items>
-                <menuItem title="Settings" id="Nyi-bc-5ci">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="openPrefs:" target="Voe-Tx-rLC" id="Zsv-mT-omN"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Quit" id="taI-gw-Hzg">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="quitApp:" target="Voe-Tx-rLC" id="gsD-KD-lg7"/>
-                    </connections>
-                </menuItem>
-            </items>
-            <point key="canvasLocation" x="-65" y="339.5"/>
         </menu>
     </objects>
 </document>

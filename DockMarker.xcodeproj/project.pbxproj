@@ -19,7 +19,9 @@
 		A0105C841B636D640079A29F /* NSImage+Trim.m in Sources */ = {isa = PBXBuildFile; fileRef = A0105C831B636D640079A29F /* NSImage+Trim.m */; };
 		A054EC911B6609B400F9B11A /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A054EC901B6609B400F9B11A /* ApplicationServices.framework */; };
 		A08E145F1B46DA1700AD2708 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A08E145E1B46DA1700AD2708 /* ScriptingBridge.framework */; };
+		A0953E901B6FE82800335D6D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AEFC0D1B66468A00420F4B /* Carbon.framework */; };
 		A0AEFC101B6646F800420F4B /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AEFC0F1B6646F800420F4B /* Quartz.framework */; };
+		A0B4348A1B6DE0FD0090900C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B434891B6DE0FD0090900C /* CoreGraphics.framework */; };
 		A0F136621B3000C2004CB24B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F136611B3000C2004CB24B /* AppDelegate.m */; };
 		A0F136641B3000C2004CB24B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F136631B3000C2004CB24B /* main.m */; };
 		A0F136671B3000C2004CB24B /* DockMarker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0F136651B3000C2004CB24B /* DockMarker.xcdatamodeld */; };
@@ -59,6 +61,7 @@
 		A08E145E1B46DA1700AD2708 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		A0AEFC0D1B66468A00420F4B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		A0AEFC0F1B6646F800420F4B /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		A0B434891B6DE0FD0090900C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A0F1365B1B3000C2004CB24B /* DockMarker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DockMarker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F1365F1B3000C2004CB24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0F136601B3000C2004CB24B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0953E901B6FE82800335D6D /* Carbon.framework in Frameworks */,
+				A0B4348A1B6DE0FD0090900C /* CoreGraphics.framework in Frameworks */,
 				A0AEFC101B6646F800420F4B /* Quartz.framework in Frameworks */,
 				A054EC911B6609B400F9B11A /* ApplicationServices.framework in Frameworks */,
 				A0105C721B617E0C0079A29F /* Foundation.framework in Frameworks */,
@@ -125,9 +130,10 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		A0F136521B3000C2004CB24B = {
+		A0F1180F1B6CB4D400F3D96E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0B434891B6DE0FD0090900C /* CoreGraphics.framework */,
 				A0AEFC0F1B6646F800420F4B /* Quartz.framework */,
 				A0AEFC0D1B66468A00420F4B /* Carbon.framework */,
 				A054EC901B6609B400F9B11A /* ApplicationServices.framework */,
@@ -135,6 +141,14 @@
 				A0105C6F1B6169180079A29F /* CoreFoundation.framework */,
 				A08E145E1B46DA1700AD2708 /* ScriptingBridge.framework */,
 				A0F136811B300DA2004CB24B /* AppKit.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		A0F136521B3000C2004CB24B = {
+			isa = PBXGroup;
+			children = (
 				A0F1365D1B3000C2004CB24B /* DockMarker */,
 				A0F136741B3000C2004CB24B /* DockMarkerTests */,
 				A0F1365C1B3000C2004CB24B /* Products */,
@@ -155,6 +169,7 @@
 			children = (
 				A0F136601B3000C2004CB24B /* AppDelegate.h */,
 				A0F136611B3000C2004CB24B /* AppDelegate.m */,
+				A0F1366A1B3000C2004CB24B /* MainMenu.xib */,
 				A0F1365E1B3000C2004CB24B /* Supporting Files */,
 				A0105C851B637FD30079A29F /* SubClasses */,
 				A0105C861B637FED0079A29F /* Helpers */,
@@ -165,8 +180,8 @@
 		A0F1365E1B3000C2004CB24B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A0F1180F1B6CB4D400F3D96E /* Frameworks */,
 				A0F136681B3000C2004CB24B /* Images.xcassets */,
-				A0F1366A1B3000C2004CB24B /* MainMenu.xib */,
 				A0F136651B3000C2004CB24B /* DockMarker.xcdatamodeld */,
 				A0F1365F1B3000C2004CB24B /* Info.plist */,
 				A0F136631B3000C2004CB24B /* main.m */,

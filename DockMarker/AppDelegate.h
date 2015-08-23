@@ -16,39 +16,60 @@
     BOOL isNotFS;
     NSMutableDictionary *BackupDict;
     NSMutableDictionary *observers;
+    NSMutableDictionary *CollectionTiles;
+    
     // Event Taps
     CFMachPortRef theEventTap;
     CFMachPortRef eventTap;
     CFRunLoopSourceRef runLoopSource;
+
+
+    // Settings Window
+    IBOutlet NSWindow *SettingsWindow;
+    IBOutlet NSButton *lALogin;
+    IBOutlet NSColorWell *colorPicker;
+    IBOutlet NSSlider *sizePicker;
     
-    // Window Lists
-    NSMutableArray *BackupIDs;
-    NSMutableArray *BackupTiles;
-    CFArrayRef listOfWindows;
-    NSArray *array;
-    CGWindowImageOption imageOptions;
-    CGWindowListOption singleWindowListOptions;
+    // Status Menu
+    NSMenuItem *clipsCont;
+    
+    // Experimental
+    NSPoint _lastMousePoint;
+    AXUIElementRef _currentUIElement;
+    AXUIElementRef _systemWideElement;
+    NSMutableDictionary *tileRects;
+    
 }
 
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly,  nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, nonatomic) NSManagedObjectContext *managedObjectContext;
 
-@property IBOutlet NSView *AltDockTile;
 @property CFMachPortRef eventTap;
 @property NSTimer *timer;
 @property NSMutableArray *RunningTiles;
 @property int TotalWindowsCount;
 @property NSMutableDictionary *WindowPreviews;
 @property BOOL needsRestart;
+@property NSMutableDictionary *DockSettings;
+
+@property (strong) IBOutlet NSMenu *statusMenu;
+@property (strong) NSStatusItem *myStatusItem;
 
 @property (nonatomic) NSMutableArray *windowInfoArray;
 @property (nonatomic) NSMutableArray *lastAllWindowInfoArray;
 @property (nonatomic) NSMutableArray *allShowingWinKey;
+@property int LoopCounter;
+@property BOOL isPaused;
 
+@property int IndicatorSize;
+@property NSColor *indicatorColor;
 
-- (void)receivedNotification:(NSString *)theName process:(ProcessSerialNumber *)theProcess element:(AXUIElementRef)theElement;
-
+- (IBAction)openPrefs:(id)sender;
+- (IBAction)quitApp:(id)sender;
+- (IBAction)toggleLoginItem:(id)sender;
+- (IBAction)chooseColor:(id)sender;
+- (IBAction)chooseSize:(id)sender;
 
 @end
 

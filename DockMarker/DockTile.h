@@ -10,25 +10,17 @@
 #import "AppDelegate.h"
 
 @interface DockTile : NSView{
-    CGWindowImageOption imageOptions;
-    CGWindowListOption singleWindowListOptions;
-    NSTrackingArea *track;
-    NSTrackingArea *track2;
-    NSView *content;
+    NSTimer *looper;
+    NSTimer *dummyTimer;
     AppDelegate *deleg;
-    
 }
 @property NSMutableDictionary* values;
 @property NSImageView *img;
 @property NSView *indicator;
-@property (nonatomic) NSMutableArray *windowInfoArray;
-@property (nonatomic) NSMutableArray *lastAllWindowInfoArray;
-@property (nonatomic) NSMutableArray *allShowingWinKey;
-@property NSMutableArray *myChildren;
-@property NSWindow *floater;;
-@property BOOL isactive;
 
+@property AXUIElementRef DockTileRef;
 
--(void) updateTA : (NSSize) size;
+- (void) startTimer;
+- (void) stopTimer;
 
 @end
