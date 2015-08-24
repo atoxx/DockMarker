@@ -23,11 +23,12 @@ extern NSWindow *openPicker;
         self.wantsLayer = YES;
         deleg = (AppDelegate*) [[NSApplication sharedApplication] delegate];
         
-        NSRect box = NSMakeRect((frameRect.size.width - (deleg.IndicatorSize * 2)) / 2, 0, deleg.IndicatorSize * 2, deleg.IndicatorSize);
+        int perc = (deleg.indicatorSize2 * 100) / frameRect.size.width;
+        NSRect box = NSMakeRect((frameRect.size.width - (deleg.IndicatorSize * 2)) / 2, 0, perc, deleg.IndicatorSize);
         indicator = [[NSView alloc] initWithFrame:box];
         indicator.wantsLayer = YES;
         [indicator.layer setBackgroundColor:[deleg.indicatorColor CGColor]];
-        int radius = round(deleg.IndicatorSize);
+        int radius = 3; // round(deleg.IndicatorSize);
         if (deleg.IndicatorSize > 5){
             [indicator.layer setCornerRadius:radius];
         }
@@ -43,7 +44,8 @@ extern NSWindow *openPicker;
         rect.origin.y = 15;
         
         [self setFrame:rect];
-        NSRect box = NSMakeRect((rect.size.width - (deleg.IndicatorSize * 2)) / 2, 0, deleg.IndicatorSize * 2, deleg.IndicatorSize);
+        int perc = (deleg.indicatorSize2 * [self bounds].size.width) / 100;
+        NSRect box = NSMakeRect(([self bounds].size.width - perc) / 2, 0, perc, deleg.IndicatorSize);
         [self.indicator setFrame:box];
         [dummyTimer invalidate];
         dummyTimer = nil;
@@ -55,7 +57,8 @@ extern NSWindow *openPicker;
         rect.origin.y = 15;
 
         [[self animator] setFrame:rect];
-        NSRect box = NSMakeRect((rect.size.width - (deleg.IndicatorSize * 2)) / 2, 0, deleg.IndicatorSize * 2, deleg.IndicatorSize);
+        int perc = (deleg.indicatorSize2 * [self bounds].size.width) / 100;
+        NSRect box = NSMakeRect(([self bounds].size.width - perc) / 2, 0, perc, deleg.IndicatorSize);
         [self.indicator setFrame:box];
     }
 }
@@ -65,7 +68,10 @@ extern NSWindow *openPicker;
     }
 }
 - (void) stopTimer{
-    [looper invalidate];
-    looper = nil;
+    dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 0.5);
+    dispatch_after(delay, dispatch_get_main_queue(), ^(void){
+        [looper invalidate];
+        looper = nil;
+    });
 }
 @end

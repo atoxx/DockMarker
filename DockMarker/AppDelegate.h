@@ -29,6 +29,7 @@
     IBOutlet NSButton *lALogin;
     IBOutlet NSColorWell *colorPicker;
     IBOutlet NSSlider *sizePicker;
+    IBOutlet NSSlider *sizePicker2;
     
     // Status Menu
     NSMenuItem *clipsCont;
@@ -61,8 +62,10 @@
 @property (nonatomic) NSMutableArray *allShowingWinKey;
 @property int LoopCounter;
 @property BOOL isPaused;
+@property BOOL timerStarted;
 
 @property int IndicatorSize;
+@property int indicatorSize2;
 @property NSColor *indicatorColor;
 
 - (IBAction)openPrefs:(id)sender;
@@ -70,6 +73,7 @@
 - (IBAction)toggleLoginItem:(id)sender;
 - (IBAction)chooseColor:(id)sender;
 - (IBAction)chooseSize:(id)sender;
+- (IBAction)chooseSize2:(id)sender;
 
 @end
 

@@ -17,6 +17,7 @@
                 <outlet property="colorPicker" destination="B6U-t9-14f" id="Brp-Vp-WCh"/>
                 <outlet property="lALogin" destination="of7-sg-S6x" id="Duq-Vm-Znq"/>
                 <outlet property="sizePicker" destination="Y7n-px-vCY" id="ZV9-ji-qx6"/>
+                <outlet property="sizePicker2" destination="IXt-oI-Mwk" id="Lxo-6w-zRA"/>
                 <outlet property="statusMenu" destination="80G-a3-aql" id="jkd-mB-G8l"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -738,12 +739,35 @@
                         </textFieldCell>
                     </textField>
                     <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y7n-px-vCY">
-                        <rect key="frame" x="18" y="213" width="238" height="21"/>
-                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="15" doubleValue="15" tickMarkPosition="above" sliderType="linear" id="CRE-Lp-ccf"/>
+                        <rect key="frame" x="18" y="169" width="238" height="26"/>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="1" maxValue="15" doubleValue="15" tickMarkPosition="above" numberOfTickMarks="15" sliderType="linear" id="CRE-Lp-ccf"/>
                         <connections>
                             <action selector="chooseSize:" target="Voe-Tx-rLC" id="1jG-F8-cRL"/>
                         </connections>
                     </slider>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vXM-JT-vdt">
+                        <rect key="frame" x="20" y="203" width="107" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Indicator Height:" id="f8J-C9-TmI">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IXt-oI-Mwk">
+                        <rect key="frame" x="20" y="119" width="236" height="26"/>
+                        <sliderCell key="cell" state="on" alignment="left" minValue="10" maxValue="80" doubleValue="10" tickMarkPosition="above" numberOfTickMarks="9" allowsTickMarkValuesOnly="YES" sliderType="linear" id="FXS-bi-A1H"/>
+                        <connections>
+                            <action selector="chooseSize2:" target="Voe-Tx-rLC" id="5bV-yU-CmG"/>
+                        </connections>
+                    </slider>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WbX-NL-mcZ">
+                        <rect key="frame" x="18" y="146" width="102" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Indicator Width:" id="4yo-bv-C2Y">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
             <point key="canvasLocation" x="180" y="373.5"/>

@@ -36,6 +36,7 @@ CFMachPortRef eventPort;
 @synthesize LoopCounter;
 @synthesize indicatorColor;
 @synthesize IndicatorSize;
+@synthesize indicatorSize2;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -44,6 +45,12 @@ CFMachPortRef eventPort;
     } else {
         IndicatorSize = 15;
     }
+    if ([defaults valueForKey:@"indicatorSize2"]){
+        indicatorSize2 = [[defaults valueForKey:@"indicatorSize2"] intValue];
+    } else {
+        indicatorSize2 = 10;
+    }
+
     if ([defaults valueForKey:@"indicatorColor"]){
         NSData *theData=[defaults dataForKey:@"indicatorColor"];
         if (theData != nil){
@@ -130,7 +137,7 @@ CFMachPortRef eventPort;
     [self.myStatusItem setMenu:self.statusMenu];
     
     [self CreateDockPrefs];
-    [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(reFocus:) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(reFocus:) userInfo:nil repeats:YES];
 }
 CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventRef aEvent, void* aRefcon ){
     AppDelegate *self = (__bridge AppDelegate *)(aRefcon);
@@ -146,20 +153,17 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
     CGRect area = CGRectMake(0, Screen.size.height - 200, Screen.size.width, 200);
     
     if (CGRectContainsPoint(area, point )) {
-        if (!self.timer){
-            if (self.needsRestart == NO){
-                if (self.LoopCounter > 1000){
-                    self.needsRestart = YES;
-                }
-                [self CreateDockPrefs];
-            }
+        if (self.timerStarted == NO){
+            [self CreateDockPrefs];
+            self.timerStarted = YES;
             for (NSMutableDictionary *tileDict in self.RunningTiles){
                 DockTile *tileView = [tileDict valueForKey:@"tile"];
                 [tileView startTimer];
             }
         }
     } else {
-        if (self.timer){
+        if (self.timerStarted == YES){
+            self.timerStarted = NO;
             for (NSMutableDictionary *tileDict in self.RunningTiles){
                 DockTile *tileView = [tileDict valueForKey:@"tile"];
                 [tileView stopTimer];
@@ -428,6 +432,9 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
     if ([defaults valueForKey:@"indicatorSize"]){
         IndicatorSize = [[defaults valueForKey:@"indicatorSize"] intValue];
     }
+    if ([defaults valueForKey:@"indicatorSize2"]){
+        indicatorSize2 = [[defaults valueForKey:@"indicatorSize2"] intValue];
+    }
     if ([defaults valueForKey:@"indicatorColor"]){
         NSData *theData=[defaults dataForKey:@"indicatorColor"];
         if (theData != nil){
@@ -436,6 +443,7 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
     }
     [colorPicker setColor:indicatorColor];
     [sizePicker setDoubleValue:IndicatorSize];
+    [sizePicker2 setDoubleValue:indicatorSize2];
     
     if (login && [login isEqualToString:@"yes"]){
         lALogin.state = NSOnState;
@@ -524,6 +532,12 @@ CGEventRef MouseTapCallback( CGEventTapProxy aProxy, CGEventType aType, CGEventR
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:[[NSNumber alloc] initWithInt:[sender doubleValue]] forKey:@"indicatorSize"];
     IndicatorSize = [sender doubleValue];
+    [self newApp:nil];
+}
+- (IBAction)chooseSize2:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:[[NSNumber alloc] initWithInt:[sender doubleValue]] forKey:@"indicatorSize2"];
+    indicatorSize2 = [sender doubleValue];
     [self newApp:nil];
 }
 
